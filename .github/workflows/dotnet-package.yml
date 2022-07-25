@@ -32,7 +32,7 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: nugetPackage
-          path: src/C.Common/bin/Release/
+          path: src/C.Common/bin/Release
 
   # publish:
   #   runs-on: ubuntu-latest
