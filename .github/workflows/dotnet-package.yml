@@ -17,8 +17,8 @@ jobs:
         with:
           dotnet-version: 6.0.x
           # source-url: https://nuget.pkg.github.com/soonthana/index.json
-        env:
-          NUGET_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        # env:
+        #   NUGET_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Restore dependencies
         run: dotnet restore
@@ -34,11 +34,11 @@ jobs:
           name: nugetPackage
           path: src/C.Common/bin/Release
 
-  # publish:
-  #   runs-on: ubuntu-latest
-  #   needs: build
+  publish:
+    runs-on: ubuntu-latest
+    needs: build
 
-  #   steps:
+    steps:
       - name: Download package artifact
         uses: actions/download-artifact@v3
         with:
