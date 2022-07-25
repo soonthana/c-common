@@ -27,7 +27,7 @@ jobs:
       - name: Test package
         run: dotnet test --no-build --verbosity normal
       - name: Pack package
-        run: dotnet pack src/C.Common/*.csproj --configuraion Release
+        run: dotnet pack src/C.Common/*.csproj --configuration Release
       - name: Upload package artifact
         uses: actions/upload-artifact@v3
         with:
