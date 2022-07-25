@@ -34,11 +34,11 @@ jobs:
           name: nugetPackage
           path: src/C.Common/bin/Release/
 
-  publish:
-    runs-on: ubuntu-latest
-    needs: build
+  # publish:
+  #   runs-on: ubuntu-latest
+  #   needs: build
 
-    steps:
+  #   steps:
       - name: Download package artifact
         uses: actions/download-artifact@v3
         with:
