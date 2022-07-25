@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+       <PackageId>C.Common</PackageId>
+    <Version>1.1.1</Version>
+    <Authors>soonthana</Authors>
+    <Company>Undone</Company>
+    <PackageDescription>CCC Common package for Move Microservices.</PackageDescription>
+    <RepositoryUrl>https://github.com/soonthana/c-common</RepositoryUrl>
+  </PropertyGroup>
+
+</Project>
