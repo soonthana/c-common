@@ -44,4 +44,4 @@ jobs:
         with:
           name: nugetPackage
       - name: Push package to GitHub Packages
-        run: dotnet nuget push nugetPackage/*.nupkg --source https://nuget.pkg.github.com/soonthana/index.json
+        run: dotnet nuget push src/C.Common/bin/Release/*.nupkg --source https://nuget.pkg.github.com/soonthana/index.json
