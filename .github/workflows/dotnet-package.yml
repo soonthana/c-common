@@ -16,7 +16,7 @@ jobs:
         uses: actions/setup-dotnet@v2
         with:
           dotnet-version: 6.0.x
-          source-url: https://nuget.pkg.github.com/soonthana/index.json
+          # source-url: https://nuget.pkg.github.com/soonthana/index.json
         env:
           NUGET_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
@@ -44,4 +44,4 @@ jobs:
         with:
           name: nugetPackage
       - name: Push package to GitHub Packages
-        run: dotnet nuget push nugetPackage/*.nupkg
+        run: dotnet nuget push nugetPackage/*.nupkg --source https://nuget.pkg.github.com/soonthana/index.json
