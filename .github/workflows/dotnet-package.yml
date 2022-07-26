@@ -25,11 +25,20 @@ jobs:
         run: dotnet test --no-build --verbosity normal
       - name: Pack package
         run: dotnet pack src/C.Common/*.csproj --configuration Release
+      - name: Upload package
+        uses: actions/upload-artifact@v2
+        with:
+          name: nugetPackage
+          path: src/C.Common/bin/Release/
   
   release:
     runs-on: ubuntu-latest
     needs: build
     
     steps:
+      - name: Download package
+        uses: actions/download-artifact@v1.0.0
+        with:
+          name: nugetPackage
       - name: Push package to GitHub Packages
-        run: dotnet nuget push src/C.Common/bin/Release/*.nupkg --api-key ${{ secrets.GITHUB_TOKEN }} --source https://nuget.pkg.github.com/soonthana/index.json
+        run: dotnet nuget push nugetPackage/*.nupkg --api-key ${{ secrets.GITHUB_TOKEN }} --source https://nuget.pkg.github.com/soonthana/index.json
