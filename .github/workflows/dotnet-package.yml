@@ -26,7 +26,7 @@ jobs:
       - name: Pack package
         run: dotnet pack src/C.Common/*.csproj --configuration Release
       - name: Upload package
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v2
         with:
           name: nugetPackage
           path: src/C.Common/bin/Release/
@@ -37,7 +37,7 @@ jobs:
     
     steps:
       - name: Download package
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v2
         with:
           name: nugetPackage
       - name: Push package to GitHub Packages
